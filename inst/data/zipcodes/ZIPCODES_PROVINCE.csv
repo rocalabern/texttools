@@ -1,0 +1,53 @@
+ZIPCODE;ZIPCODE_NUM;NAME_PROVINCE
+01;1;Álava
+08;8;Barcelona
+15;15;La Coruña
+23;23;Jaén
+30;30;Murcia
+38;38;Santa Cruz de Tenerife
+45;45;Toledo
+02;2;Albacete
+09;9;Burgos
+16;16;Cuenca
+24;24;León
+31;31;Navarra
+46;46;Valencia
+03;3;Alicante
+10;10;Cáceres
+17;17;Gerona
+25;25;Lérida
+32;32;Orense
+39;39;Cantabria
+47;47;Valladolid
+04;4;Almería
+11;11;Cádiz
+18;18;Granada
+26;26;La Rioja
+33;33;Asturias
+40;40;Segovia
+48;48;Vizcaya
+05;5;Ávila
+12;12;Castellón
+19;19;Guadalajara
+34;34;Palencia
+41;41;Sevilla
+49;49;Zamora
+06;6;Badajoz
+13;13;Ciudad Real
+20;20;Guipúzcoa
+27;27;Lugo
+35;35;Las Palmas
+42;42;Soria
+50;50;Zaragoza
+07;7;Islas Baleares
+21;21;Huelva
+28;28;Madrid
+36;36;Pontevedra
+43;43;Tarragona
+51;51;Ceuta
+14;14;Córdoba
+22;22;Huesca
+29;29;Málaga
+37;37;Salamanca
+44;44;Teruel
+52;52;Melilla

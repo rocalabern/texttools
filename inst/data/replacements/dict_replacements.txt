@@ -1,0 +1,5 @@
+"Key";"Value"
+"listGMNonASCII";"ÀÁÄÂÃÅÆÈÉËÊÌÍÏÎÒÓÖÔÕØÙÚÜÛàáäâãåæèéëêìíïîòóöôõðøùúüûŽžŠšÝýÿÝÞßþ'´`;"
+"listGMASCII";"AAAAAAAEEEEIIIIOOOOOOUUUUaaaaaaaeeeeiiiiooooooouuuuZzSsYyyYBsb''',"
+"listNonASCII";"ÀÁÄÂÃÅÆÈÉËÊÌÍÏÎÒÓÖÔÕØÙÚÜÛàáäâãåæèéëêìíïîòóöôõðøùúüûŽžŠšÇçÑñÝýÿÝÞßþ"
+"listASCII";"AAAAAAAEEEEIIIIOOOOOOUUUUaaaaaaaeeeeiiiiooooooouuuuZzSsCcNnYyyYBsb"

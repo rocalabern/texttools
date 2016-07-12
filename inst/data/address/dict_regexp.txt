@@ -1,0 +1,144 @@
+pattern;replacement
+\b([a-zA-Z]+)(\d+)\b;\1 \2
+\b(\d+)([a-zA-Z]+)\b;\1 \2
+\b(\d+)([a-zA-Z]+)(\d+)\b;\1 \2 \3
+\b([a-zA-Z]+)(\d+)([a-zA-Z]+)\b;\1 \2 \3
+\b(\d+)([a-zA-Z]+)(\d+)([a-zA-Z]+)\b;\1 \2 \3 \4
+\b([a-zA-Z]+)(\d+)([a-zA-Z]+)(\d+)\b;\1 \2 \3 \4
+\b(\d+)([a-zA-Z]+)(\d+)([a-zA-Z]+)(\d+)\b;\1 \2 \3 \4 \5
+\b([a-zA-Z]+)(\d+)([a-zA-Z]+)(\d+)([a-zA-Z]+)\b;\1 \2 \3 \4 \5
+\b(\d+)([a-zA-Z]+)(\d+)([a-zA-Z]+)(\d+)([a-zA-Z]+)\b;\1 \2 \3 \4 \5 \6
+\b([a-zA-Z]+)(\d+)([a-zA-Z]+)(\d+)([a-zA-Z]+)(\d+)\b;\1 \2 \3 \4 \5 \6
+\b(\d+)([a-zA-Z]+)(\d+)([a-zA-Z]+)(\d+)([a-zA-Z]+)(\d+)\b;\1 \2 \3 \4 \5 \6 \7
+\b([a-zA-Z]+)(\d+)([a-zA-Z]+)(\d+)([a-zA-Z]+)(\d+)([a-zA-Z]+)\b;\1 \2 \3 \4 \5 \6 \7
+;
+\bAV\.;AVENIDA 
+\bAV/;AVENIDA 
+\bAVDA\.;AVENIDA 
+\bAVDA/;AVENIDA 
+\bAVN\.;AVENIDA 
+\bAVD\.;AVENIDA 
+^C\.;CALLE 
+^C\,;CALLE 
+\bC/\.;CALLE 
+\bC/;CALLE 
+\bCL/;CALLE 
+\bCL\.;CALLE 
+\bTRAV\.;TRAVESIA
+\bPG\.;PASAGE 
+\bURB\.;URBANIZACION 
+^CR\.;CARRETERA 
+\bCTR\.;CARRETERA 
+\bCRT\.;CARRETERA 
+\bCTRA\.;CARRETERA 
+\bCRTA\.;CARRETERA 
+\bPL\.;PLAZA 
+\bPZ\.;PLAZA 
+\bPZA\.;PLAZA 
+;
+\bAVDA\b;AVENIDA 
+\bAV\b;AVENIDA 
+\bAVN\b;AVENIDA 
+\bAVD\b;AVENIDA 
+\bCL\b;CALLE 
+\bAVINGUDA\b;AVENIDA 
+\bCARRER\b;CALLE 
+\PASEO\b;PASAGE 
+\bPASSEIG\b;PASAGE 
+\bPG\b;PASAGE 
+\bPASATGE\b;PASAGE 
+\bPASSAGE\b;PASAGE 
+\bPASATGE\b;PASAGE 
+\bPASSATGE\b;PASAGE 
+\bTRAV\b;TRAVESIA 
+\bURB\b;URBANIZACION 
+\bCTR\b;CARRETERA 
+\bCRT\b;CARRETERA 
+\bCTRA\b;CARRETERA 
+\bCRTA\b;CARRETERA 
+\bPLAÇA\b;PLAZA 
+\bPL\b;PLAZA 
+\bPZ\b;PLAZA 
+\bPZA\b;PLAZA 
+;
+\bDR\. ;DOCTOR 
+;
+\bBLQU\.;BLOQUE  
+;
+\bPTAL\.;PUERTA 
+;
+\bPTA\b;PUERTA 
+;
+\bESC\.\b;ESCALERA 
+\bESC\b;ESCALERA 
+;
+\b(\d+)DCHA\.;\1 DERECHA 
+\b(\d+)DCHA\b;\1 DERECHA 
+\b(\d+)DRCHA\.;\1 DERECHA 
+\b(\d+)DRCHA\b;\1 DERECHA 
+\bDCHA\.;DERECHA 
+\bDCHA\b;DERECHA 
+\bDRCHA\.;DERECHA 
+\bDRCHA\b;DERECHA 
+;
+\b(\d+)IZD\b;\1 IZQUIERDA 
+\b(\d+)IZD.;\1 IZQUIERDA 
+\b(\d+)IZQ\b;\1 IZQUIERDA 
+\b(\d+)IZQ.;\1 IZQUIERDA 
+\b(\d+)IZDA\b;\1 IZQUIERDA 
+\b(\d+)IZDA.;\1 IZQUIERDA 
+\b(\d+)IZQDA\b;\1 IZQUIERDA 
+\b(\d+)IZQDA.;\1 IZQUIERDA 
+;
+\b(\d+)BAJO\b;\1 BAJOS 
+\b(\d+) BAJO\b;\1 BAJOS 
+;
+\bBAJO\b;BAJOS 
+\bPBJ\b;BAJOS 
+;
+\bEDF\.;EDIFICIO 
+\bEDF\b;EDIFICIO 
+;
+\bIZD\.;IZQUIERDA 
+\bIZD\b;IZQUIERDA 
+\bIZQ\.;IZQUIERDA 
+\bIZQ\b;IZQUIERDA 
+\bIZDA\.;IZQUIERDA 
+\bIZDA\b;IZQUIERDA
+\bIZQDA\.;IZQUIERDA 
+\bIZQDA\b;IZQUIERDA
+\bISQUIERDA\b;IZQUIERDA 
+;
+\bNUM\b;NUMERO 
+\bNUM\.;NUMERO 
+\.(N:)(\d+)\b;NUMERO \2
+\.(N:) (\d+)\b;NUMERO \2
+\.(N :)(\d+)\b;NUMERO \2
+\.(N :) (\d+)\b;NUMERO \2
+\.(No.)(\d+)\b;NUMERO \2
+\.(No.) (\d+)\b;NUMERO \2
+\b(No.)(\d+)\b;NUMERO \2
+\b(No.) (\d+)\b;NUMERO \2
+\b(NR)(\d+)\b;NUMERO \2
+\b(NR) (\d+)\b;NUMERO \2
+\b(NR\.)(\d+)\b;NUMERO \2
+\b(NR\.) (\d+)\b;NUMERO \2
+\b(N\-)(\d+)\b;NUMERO \2
+\b(N\-) (\d+)\b;NUMERO \2
+\b(N)(\d+)\b;NUMERO \2
+\b(N\.)(\d+)\b;NUMERO \2
+\b(N) (\d+)\b;NUMERO \2
+\b(N\.) (\d+)\b;NUMERO \2
+\b(N\º)(\d+)\b;NUMERO \2
+\b(N\º\.)(\d+)\b;NUMERO \2
+\b(N\º) (\d+)\b;NUMERO \2
+\b(N\º\.) (\d+)\b;NUMERO \2
+\b(N\°)(\d+)\b;NUMERO \2
+\b(N\°\.)(\d+)\b;NUMERO \2
+\b(N\°) (\d+)\b;NUMERO \2°
+\b(N\°\.) (\d+)\b;NUMERO \2
+\b,(\d+)\b;, \1
+;
+\b(\d+)RO([a-zA-Z])\b;\1 \2
+\b(\d+)NDA([a-zA-Z])\b;\1 \2
+;

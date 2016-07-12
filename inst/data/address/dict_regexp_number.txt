@@ -1,0 +1,20 @@
+pattern;replacement
+\bBAJO\b;BAJOS 
+\bPBJ\b;BAJOS 
+\bEDF\b;EDIFICIO 
+\bEDIF\b;EDIFICIO 
+\bESCALA\b;ESCALERA 
+\bPOL IND\b;POLIGONO
+\bPOL\b;POLIGONO
+\bNUMERO\b; 
+\bNUM\b; 
+\bNO\b; 
+\bPORTAL\b; 
+\bPUERTA\b; 
+\bPT\b; 
+\bPISO\b; 
+\bPLANTA\b; 
+\bLOCAL\b; 
+\bBLOQUE\b; 
+\bBLOQU\b; 
+\bBLOQ\b; 
