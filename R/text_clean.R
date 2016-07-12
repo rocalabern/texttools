@@ -1,38 +1,44 @@
 # roxygen2::roxygenise()
 
 #' @title text.trim.leading
-#' @export
+#' @usage text.trim.leading(x)
+#' @export text.trim.leading
 text.trim.leading <- function (x) {
   return(sub("^\\s+", "", x))
 }
 
 #' @title text.trim.trailing
-#' @export
+#' @usage text.trim.trailing(x)
+#' @export text.trim.trailing
 text.trim.trailing <- function (x) {
   return(sub("\\s+$", "", x))
 }
 
 #' @title text.trim
-#' @export
+#' @usage text.trim(x)
+#' @export text.trim
 text.trim <- function (x) {
   return(gsub("^\\s+|\\s+$", "", x))
 }
 
 #' @title text.remove_extra_spaces
-#' @export
+#' @usage text.remove_extra_spaces(x)
+#' @export text.remove_extra_spaces
 text.remove_extra_spaces <- function(x) {
   return(gsub("(?<=[\\s])\\s*|^\\s+|\\s+$", "", x, perl=TRUE))
 }
 
 #' @title text.remove_extra_characters
-#' @export
+#' @usage text.remove_extra_characters(x, characters_to_simplify="[[:alpha:]]")
+#' @export text.remove_extra_characters
 text.remove_extra_characters <- function(x, characters_to_simplify="[[:alpha:]]") {
   # characters_to_simplify = "."
   return(gsub(paste0("(",characters_to_simplify,")\\1+"), "\\1", x))
 }
 
 #' @title text.remove_extra_characters_readable
-#' @export
+#' @usage text.remove_extra_characters_readable(x)
+#' @export text.remove_extra_characters_readable
 text.remove_extra_characters_readable <- function(x) {
   output = x
   output = gsub("([^0123456789])\\1{2,}", "\\1\\1", output)
@@ -41,31 +47,36 @@ text.remove_extra_characters_readable <- function(x) {
 }
 
 #' @title text.remove_links
-#' @export
+#' @usage text.remove_links(x, replacement="")
+#' @export text.remove_links
 text.remove_links <- function(x, replacement="") {
   return(gsub("http\\w+", replacement, x))
 }
 
 #' @title text.remove_punctuation
-#' @export
+#' @usage text.remove_punctuation(x, replacement="")
+#' @export text.remove_punctuation
 text.remove_punctuation <- function(x, replacement="") {
   return(gsub("[[:punct:]]", replacement, x))
 }
 
 #' @title text.remove_numbers
-#' @export
+#' @usage text.remove_numbers(x, replacement="")
+#' @export text.remove_numbers
 text.remove_numbers <- function(x, replacement="") {
   return(gsub("[[:digit:]]", replacement, x))
 }
 
 #' @title text.remove_tabs
-#' @export
+#' @usage text.remove_tabs(x, replacement=" ")
+#' @export text.remove_tabs
 text.remove_tabs <- function(x, replacement=" ") {
   return(gsub("[\t]", replacement, x))
 }
 
 #' @title text.remove_newlines
-#' @export
+#' @usage text.remove_newlines(x, replacement=" ")
+#' @export text.remove_newlines
 text.remove_newlines <- function(x, replacement=" ") {
   output = x
   output = gsub("[\n]", replacement, output)
@@ -74,7 +85,16 @@ text.remove_newlines <- function(x, replacement=" ") {
 }
 
 #' @title text.clean
-#' @export
+#' @usage text.clean(
+#'   x,
+#'   trim = TRUE,
+#'   remove_links = TRUE,
+#'   remove_punctuation = TRUE,
+#'   remove_numbers = TRUE,
+#'   remove_tabs = TRUE,
+#'   remove_newlines = TRUE,
+#'   remove_extra_spaces = TRUE)
+#' @export text.clean
 text.clean = function(
   x,
   trim = TRUE,
@@ -102,7 +122,13 @@ text.clean = function(
 }
 
 #' @title text.toASCII
-#' @export
+#' @usage text.toASCII(
+#'   x,
+#'   useUnwantedArray = TRUE,
+#'   useIConv = TRUE,
+#'   listNonASCII = listNonASCII,
+#'   listASCII = listASCII)
+#' @export text.toASCII
 text.toASCII = function(
   x,
   useUnwantedArray = TRUE,
@@ -124,7 +150,8 @@ text.toASCII = function(
 }
 
 #' @title text.simpleCap
-#' @export
+#' @usage text.simpleCap(x)
+#' @export text.simpleCap
 text.simpleCap <- function(x) {
   output = lapply(strsplit(x, " "),
     function(s) {

@@ -4,6 +4,6 @@
 \alias{text.remove_newlines}
 \title{text.remove_newlines}
 \usage{
-\method{text}{remove_newlines}(x, replacement = " ")
+text.remove_newlines(x, replacement=" ")
 }
 

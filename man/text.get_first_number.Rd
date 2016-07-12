@@ -4,6 +4,6 @@
 \alias{text.get_first_number}
 \title{text.get_first_number}
 \usage{
-\method{text}{get_first_number}(x)
+text.get_first_number(x)
 }
 

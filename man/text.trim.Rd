@@ -4,6 +4,6 @@
 \alias{text.trim}
 \title{text.trim}
 \usage{
-\method{text}{trim}(x)
+text.trim(x)
 }
 

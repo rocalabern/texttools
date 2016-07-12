@@ -4,6 +4,13 @@
 \alias{text.filter}
 \title{text.filter}
 \usage{
-\method{text}{filter}(x, regexp, message = FALSE)
+text.filter(
+  x,
+  pattern,
+  ignore.case = FALSE,
+  perl = FALSE,
+  fixed = FALSE,
+  message = texttools:::param.default.text.filter.message,
+  batch = texttools:::param.default.text.filter.batch)
 }
 

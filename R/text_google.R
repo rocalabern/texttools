@@ -1,13 +1,15 @@
 # roxygen2::roxygenise()
 
 #' @title google.full_address_df
-#' @export
+#' @usage google.full_address_df(dfInput, removeFlat = TRUE)
+#' @export google.full_address_df
 google.full_address_df <- function(dfInput, removeFlat = TRUE) {
   google.full_address(dfInput$address, dfInput$city, dfInput$province, dfInput$zipcode, removeFlat)
 }
 
 #' @title google.full_address
-#' @export
+#' @usage google.full_address(address, city, province, zipcode, removeFlat = TRUE)
+#' @export google.full_address
 google.full_address <- function(address, city, province, zipcode, removeFlat = TRUE) {
   if (removeFlat) {
     listInputAddressWithoutNumber = gsub("[[:digit:]]", "", address)
@@ -30,13 +32,15 @@ google.full_address <- function(address, city, province, zipcode, removeFlat = T
 }
 
 #' @title google.normalize_df
-#' @export
+#' @usage google.normalize_df(dfInput)
+#' @export google.normalize_df
 google.normalize_df <- function(dfInput) {
   google.normalize(dfInput$address, dfInput$city, dfInput$province, dfInput$zipcode)
 }
 
 #' @title google.normalize
-#' @export
+#' @usage google.normalize(address, city, province, zipcode)
+#' @export google.normalize
 google.normalize <- function(address, city, province, zipcode) {
   full_address = google.full_address(address, city, province, zipcode, TRUE)
   normalized_address = full_address
@@ -52,7 +56,8 @@ google.normalize <- function(address, city, province, zipcode) {
 }
 
 #' @title google.geoCode
-#' @export
+#' @usage google.geoCode(address, return.call = "json", sensor = "false", verbose = FALSE)
+#' @export google.geoCode
 google.geoCode <- function(address, return.call = "json", sensor = "false", verbose = FALSE) {
   if(verbose) message(address)
   root <- "http://maps.google.com/maps/api/geocode/"

@@ -4,6 +4,6 @@
 \alias{text.remove_punctuation}
 \title{text.remove_punctuation}
 \usage{
-\method{text}{remove_punctuation}(x, replacement = "")
+text.remove_punctuation(x, replacement="")
 }
 

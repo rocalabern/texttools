@@ -4,6 +4,6 @@
 \alias{text.simpleCap}
 \title{text.simpleCap}
 \usage{
-\method{text}{simpleCap}(x)
+text.simpleCap(x)
 }
 

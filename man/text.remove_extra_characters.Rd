@@ -4,7 +4,6 @@
 \alias{text.remove_extra_characters}
 \title{text.remove_extra_characters}
 \usage{
-\method{text}{remove_extra_characters}(x,
-  characters_to_simplify = "[[:alpha:]]")
+text.remove_extra_characters(x, characters_to_simplify="[[:alpha:]]")
 }
 

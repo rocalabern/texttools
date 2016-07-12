@@ -1,15 +1,24 @@
 # roxygen2::roxygenise()
 
 #' @title text.address.parser
-#' @export
+#' @usage text.address.parser(
+#'   address,
+#'   dict_fixed = NULL,
+#'   dict_regexp = NULL,
+#'   dict_regexp_number = NULL,
+#'   verbose=FALSE)
+#' @export text.address.parser
 text.address.parser <- function(
   address,
-  # city, province, zipcode,
   dict_fixed = NULL,
   dict_regexp = NULL,
   dict_regexp_number = NULL,
   verbose=FALSE
 ) {
+
+  if (is.null(dict_fixed) || is.null(dict_regexp) || is.null(dict_regexp_number)) {
+    warning("[text.address.parser] Some dictionaries for replacements are not defined.")
+  }
 
   ############################## DELETE \ DEBUG
   if (FALSE) {
@@ -182,7 +191,8 @@ text.address.parser <- function(
 }
 
 #' @title text.address.normalize
-#' @export
+#' @usage text.address.normalize(address, city, province, zipcode)
+#' @export text.address.normalize
 text.address.normalize <- function(address, city, province, zipcode) {
   listInputAddressWithoutNumber = gsub("[[:digit:]]", "", address)
   listInputAddressFirstNumber = text.get_first_number(address)
@@ -198,7 +208,8 @@ text.address.normalize <- function(address, city, province, zipcode) {
 }
 
 #' @title text.address.threshold_street
-#' @export
+#' @usage text.address.threshold_street(input_address)
+#' @export text.address.threshold_street
 text.address.threshold_street <- function (input_address) {
   output <- sapply(1:length(input_address),
          function(el) {
@@ -228,7 +239,8 @@ text.address.threshold_street <- function (input_address) {
 }
 
 #' @title text.address.add_street
-#' @export
+#' @usage text.address.add_street(input_address)
+#' @export text.address.add_street
 text.address.add_street <- function (input_address) {
   output <- sapply(1:length(input_address),
          function(el) {

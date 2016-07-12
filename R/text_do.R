@@ -1,7 +1,8 @@
 # roxygen2::roxygenise()
 
 #' @title text.DigOrig.BasicProcess
-#' @export
+#' @usage text.DigOrig.BasicProcess(x)
+#' @export text.DigOrig.BasicProcess
 text.DigOrig.BasicProcess <- function (x) {
   x = toupper(x)
   x = text.trim(x)
@@ -29,40 +30,81 @@ text.DigOrig.BasicProcess <- function (x) {
   #     str_json = substr(str_json, pos_ini, pos_end)
   #   }, silent = TRUE )
 
-#' @title get.PuntuaMiZona
-#' @export
-get.PuntuaMiZona <- function(street, zipcode, ip_PuntuaMiZona, user_PuntuaMiZona, pass_PuntuaMiZona) {
+#' @title text.DigOrig.PuntuaMiZona
+#' @usage text.DigOrig.PuntuaMiZona(
+#'  street,
+#'  zipcode,
+#'  ip_PuntuaMiZona = connData$puntuamizona_ip,
+#'  user_PuntuaMiZona = connData$puntuamizona_user,
+#'  pass_PuntuaMiZona = connData$puntuamizona_pass,
+#'  throw_error = texttools:::param.default.text.PuntuaMiZona.ThrowError)
+#' @export text.DigOrig.PuntuaMiZona
+text.DigOrig.PuntuaMiZona <- function(
+  street,
+  zipcode,
+  ip_PuntuaMiZona = connData$puntuamizona_ip,
+  user_PuntuaMiZona = connData$puntuamizona_user,
+  pass_PuntuaMiZona = connData$puntuamizona_pass,
+  throw_error = texttools:::param.default.text.PuntuaMiZona.ThrowError
+) {
 
-  try_code <- try(
-    {
-      req <- POST(
+  if (throw_error) {
+      req <- httr::POST(
         url=paste0("http://",ip_PuntuaMiZona,"/get_json/"),
-        authenticate(user_PuntuaMiZona, pass_PuntuaMiZona, type = "basic"),
-        add_headers("Content-Type" = "application/json"),
+        httr::authenticate(user_PuntuaMiZona, pass_PuntuaMiZona, type = "basic"),
+        httr::add_headers("Content-Type" = "application/json"),
         body = list(zipCode=zipcode, street=street),
         encode="json")
 
-      # stop_for_status(req)
-      str_json <- content(req, "text", encoding="UTF-8")
+      httr::stop_for_status(req)
+      str_json <- httr::content(req, "text", encoding="UTF-8")
+      return(jsonlite::fromJSON(str_json))
+  } else {
+    try_code <- try(
+    {
+      req <- httr::POST(
+        url=paste0("http://",ip_PuntuaMiZona,"/get_json/"),
+        httr::authenticate(user_PuntuaMiZona, pass_PuntuaMiZona, type = "basic"),
+        httr::add_headers("Content-Type" = "application/json"),
+        body = list(zipCode=zipcode, street=street),
+        encode="json")
+
+      httr::stop_for_status(req)
+      str_json <- httr::content(req, "text", encoding="UTF-8")
       # validate(json)
     }, silent = TRUE )
-  if( 'try-error' %in% class(try_code) ) {
-    return(NULL)
-  } else {
-    return(jsonlite::fromJSON(str_json))
+    if( 'try-error' %in% class(try_code) ) {
+      return(NULL)
+    } else {
+      return(jsonlite::fromJSON(str_json))
+    }
   }
 }
 
-#' @title text.DigOrig.Normalizer
-#' @export
-text.DigOrig.Normalizer <- function (input_address, input_city, input_zipcode, ip_PuntuaMiZona, user_PuntuaMiZona, pass_PuntuaMiZona) {
+#' @title text.DigOrig.AddressNormalizer
+#' @usage text.DigOrig.AddressNormalizer(
+#'  input_address,
+#'  input_city,
+#'  input_zipcode,
+#'  ip_PuntuaMiZona = connData$puntuamizona_ip,
+#'  user_PuntuaMiZona = connData$puntuamizona_user,
+#'  pass_PuntuaMiZona = connData$puntuamizona_pass)
+#' @export text.DigOrig.AddressNormalizer
+text.DigOrig.AddressNormalizer <- function (
+  input_address,
+  input_city,
+  input_zipcode,
+  ip_PuntuaMiZona = connData$puntuamizona_ip,
+  user_PuntuaMiZona = connData$puntuamizona_user,
+  pass_PuntuaMiZona = connData$puntuamizona_pass
+) {
   dfParsed = text.address.parser(input_address, dict_fixed, dict_regexp, dict_regexp_number)
   final_bsc_street = dfParsed$street
   final_bsc_number = dfParsed$number
   final_bsc_city = input_city
   final_bsc_zipcode = input_zipcode
 
-  listPuntuaMiZona = get.PuntuaMiZona(final_bsc_street, input_zipcode, ip_PuntuaMiZona, user_PuntuaMiZona, pass_PuntuaMiZona)
+  listPuntuaMiZona = text.DigOrig.PuntuaMiZona(final_bsc_street, input_zipcode, ip_PuntuaMiZona, user_PuntuaMiZona, pass_PuntuaMiZona)
   final_pmz_street = listPuntuaMiZona$street
   final_pmz_number = dfParsed$number
   final_pmz_city = listPuntuaMiZona$city
@@ -130,14 +172,28 @@ text.DigOrig.Normalizer <- function (input_address, input_city, input_zipcode, i
   ))
 }
 
-#' @title text.DigOrig.Normalizer.Debug
-#' @export
-text.DigOrig.Normalizer.Debug <- function (input_address, input_city, input_zipcode, ip_PuntuaMiZona, user_PuntuaMiZona, pass_PuntuaMiZona) {
-  output = text.DigOrig.Normalizer(
+#' @title text.DigOrig.AddressNormalizer.Debug
+#' @usage text.DigOrig.AddressNormalizer.Debug(
+#'  input_address,
+#'  input_city,
+#'  input_zipcode,
+#'  ip_PuntuaMiZona = connData$puntuamizona_ip,
+#'  user_PuntuaMiZona = connData$puntuamizona_user,
+#'  pass_PuntuaMiZona = connData$puntuamizona_pass)
+#' @export text.DigOrig.AddressNormalizer.Debug
+text.DigOrig.AddressNormalizer.Debug <- function (
+  input_address,
+  input_city,
+  input_zipcode,
+  ip_PuntuaMiZona = connData$puntuamizona_ip,
+  user_PuntuaMiZona = connData$puntuamizona_user,
+  pass_PuntuaMiZona = connData$puntuamizona_pass
+) {
+  output = text.DigOrig.AddressNormalizer(
     input_address,
     input_city,
     input_zipcode,
-    connData$puntuamizona_ip, connData$puntuamizona_user, connData$puntuamizona_pass)
+    ip_PuntuaMiZona, user_PuntuaMiZona, pass_PuntuaMiZona)
 
   message(paste(output$final_bsc_street, output$final_bsc_number, output$final_bsc_city, output$final_bsc_zipcode, sep=" | "))
   message(paste(output$final_pmz_street, output$final_pmz_number, output$final_pmz_city, output$final_pmz_zipcode, sep=" | "))

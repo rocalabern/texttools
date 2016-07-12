@@ -4,6 +4,6 @@
 \alias{text.remove_numbers}
 \title{text.remove_numbers}
 \usage{
-\method{text}{remove_numbers}(x, replacement = "")
+text.remove_numbers(x, replacement="")
 }
 

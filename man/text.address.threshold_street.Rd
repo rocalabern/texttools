@@ -4,6 +4,6 @@
 \alias{text.address.threshold_street}
 \title{text.address.threshold_street}
 \usage{
-\method{text}{address.threshold_street}(input_address)
+text.address.threshold_street(input_address)
 }
 

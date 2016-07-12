@@ -4,6 +4,6 @@
 \alias{text.get_cases}
 \title{text.get_cases}
 \usage{
-\method{text}{get_cases}(x, pattern, ...)
+text.get_cases(x, pattern, ...)
 }
 

@@ -4,6 +4,6 @@
 \alias{text.remove_tabs}
 \title{text.remove_tabs}
 \usage{
-\method{text}{remove_tabs}(x, replacement = " ")
+text.remove_tabs(x, replacement=" ")
 }
 

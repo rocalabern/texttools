@@ -4,6 +4,6 @@
 \alias{text.get_number}
 \title{text.get_number}
 \usage{
-\method{text}{get_number}(x)
+text.get_number(x)
 }
 

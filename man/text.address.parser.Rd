@@ -4,7 +4,11 @@
 \alias{text.address.parser}
 \title{text.address.parser}
 \usage{
-\method{text}{address.parser}(address, dict_fixed = NULL,
-  dict_regexp = NULL, dict_regexp_number = NULL, verbose = FALSE)
+text.address.parser(
+  address,
+  dict_fixed = NULL,
+  dict_regexp = NULL,
+  dict_regexp_number = NULL,
+  verbose=FALSE)
 }
 

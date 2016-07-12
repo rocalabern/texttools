@@ -4,6 +4,6 @@
 \alias{text.trim.trailing}
 \title{text.trim.trailing}
 \usage{
-\method{text}{trim.trailing}(x)
+text.trim.trailing(x)
 }
 

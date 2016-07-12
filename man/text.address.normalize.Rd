@@ -4,6 +4,6 @@
 \alias{text.address.normalize}
 \title{text.address.normalize}
 \usage{
-\method{text}{address.normalize}(address, city, province, zipcode)
+text.address.normalize(address, city, province, zipcode)
 }
 

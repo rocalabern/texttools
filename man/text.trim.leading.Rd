@@ -4,6 +4,6 @@
 \alias{text.trim.leading}
 \title{text.trim.leading}
 \usage{
-\method{text}{trim.leading}(x)
+text.trim.leading(x)
 }
 

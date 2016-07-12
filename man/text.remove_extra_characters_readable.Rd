@@ -4,6 +4,6 @@
 \alias{text.remove_extra_characters_readable}
 \title{text.remove_extra_characters_readable}
 \usage{
-\method{text}{remove_extra_characters_readable}(x)
+text.remove_extra_characters_readable(x)
 }
 

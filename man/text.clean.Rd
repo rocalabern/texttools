@@ -4,8 +4,14 @@
 \alias{text.clean}
 \title{text.clean}
 \usage{
-\method{text}{clean}(x, trim = TRUE, remove_links = TRUE,
-  remove_punctuation = TRUE, remove_numbers = TRUE, remove_tabs = TRUE,
-  remove_newlines = TRUE, remove_extra_spaces = TRUE)
+text.clean(
+  x,
+  trim = TRUE,
+  remove_links = TRUE,
+  remove_punctuation = TRUE,
+  remove_numbers = TRUE,
+  remove_tabs = TRUE,
+  remove_newlines = TRUE,
+  remove_extra_spaces = TRUE)
 }
 

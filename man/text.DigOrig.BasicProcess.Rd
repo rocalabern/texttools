@@ -4,6 +4,6 @@
 \alias{text.DigOrig.BasicProcess}
 \title{text.DigOrig.BasicProcess}
 \usage{
-\method{text}{DigOrig.BasicProcess}(x)
+text.DigOrig.BasicProcess(x)
 }
 

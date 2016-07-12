@@ -4,6 +4,6 @@
 \alias{text.remove_links}
 \title{text.remove_links}
 \usage{
-\method{text}{remove_links}(x, replacement = "")
+text.remove_links(x, replacement="")
 }
 

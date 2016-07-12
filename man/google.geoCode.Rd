@@ -4,7 +4,6 @@
 \alias{google.geoCode}
 \title{google.geoCode}
 \usage{
-google.geoCode(address, return.call = "json", sensor = "false",
-  verbose = FALSE)
+google.geoCode(address, return.call = "json", sensor = "false", verbose = FALSE)
 }
 

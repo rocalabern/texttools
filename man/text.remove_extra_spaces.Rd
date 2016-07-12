@@ -4,6 +4,6 @@
 \alias{text.remove_extra_spaces}
 \title{text.remove_extra_spaces}
 \usage{
-\method{text}{remove_extra_spaces}(x)
+text.remove_extra_spaces(x)
 }
 

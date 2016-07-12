@@ -4,7 +4,11 @@
 \alias{text.toASCII}
 \title{text.toASCII}
 \usage{
-\method{text}{toASCII}(x, useUnwantedArray = TRUE, useIConv = TRUE,
-  listNonASCII = listNonASCII, listASCII = listASCII)
+text.toASCII(
+  x,
+  useUnwantedArray = TRUE,
+  useIConv = TRUE,
+  listNonASCII = listNonASCII,
+  listASCII = listASCII)
 }
 

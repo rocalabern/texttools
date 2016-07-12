@@ -1,7 +1,8 @@
 # roxygen2::roxygenise()
 
 #' @title text.get_cases
-#' @export
+#' @usage text.get_cases(x, pattern, ...)
+#' @export text.get_cases
 text.get_cases <- function(x, pattern, ...) {
   all_finds = gregexpr(pattern, x, ...)
 
@@ -17,7 +18,8 @@ text.get_cases <- function(x, pattern, ...) {
 }
 
 #' @title text.get_number
-#' @export
+#' @usage text.get_number(x)
+#' @export text.get_number
 text.get_number <- function(x) {
   all_finds = gregexpr("\\d+", x)
 
@@ -33,7 +35,8 @@ text.get_number <- function(x) {
 }
 
 #' @title text.get_first_number
-#' @export
+#' @usage text.get_first_number(x)
+#' @export text.get_first_number
 text.get_first_number <- function(x) {
   all_finds = gregexpr("\\d+", x)
 
@@ -57,16 +60,27 @@ text.get_first_number <- function(x) {
 }
 
 #' @title text.filter
-#' @export
-text.filter <- function(x, regexp, message=FALSE) {
-  allFinds = gregexpr(regexp, x)
-
-  if (length(allFinds)!=length(x)) warning("allFinds length is ")
-
-  indFinds = which(unlist(allFinds)!=-1)
+#' @usage text.filter(
+#'   x,
+#'   pattern,
+#'   ignore.case = FALSE,
+#'   perl = FALSE,
+#'   fixed = FALSE,
+#'   message = texttools:::param.default.text.filter.message,
+#'   batch = texttools:::param.default.text.filter.batch)
+#' @export text.filter
+text.filter <- function(
+  x,
+  pattern,
+  ignore.case = FALSE,
+  perl = FALSE,
+  fixed = FALSE,
+  message = texttools:::param.default.text.filter.message,
+  batch = texttools:::param.default.text.filter.batch
+) {
+  indFinds = which(grepl(pattern, x, ignore.case=ignore.case, perl=perl, fixed=fixed))
 
   if (message) {
-    batch = 50
     for (i in 1:ceiling(length(indFinds)/batch)) {
       message(paste0(x[indFinds[(1+(i-1)*batch):min(length(indFinds), i*batch)]], collapse="\n"))
     }
