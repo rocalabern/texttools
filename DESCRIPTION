@@ -1,0 +1,25 @@
+Package: texttools
+Type: Package
+Title: A wrapper of different text tools
+Version: 0.9.0
+Date: 2016-07-12 (2016-07-12)
+Author: Roc Alabern
+Maintainer: Roc Alabern <roc.alabern@gmail.com>
+Description: A wrapper package for basic text operations.
+License: GPL (>= 3)
+Suggests:
+    data.table,
+    readr,
+    text2vec,
+    tm,
+    mallet,
+    lda,
+    lsa,
+    LDAvis,
+    wordcloud,
+    FNN,
+    e1071,
+    gmodels,
+    httr,
+    jsonlite
+RoxygenNote: 5.0.1
