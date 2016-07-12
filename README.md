@@ -1,6 +1,6 @@
-# rplot
+# texttools
 
 ---
 
 ## Description
-A wrapper package for basic plots ang ggplot for easier and prettier plots than default process.
+A wrapper R package for basic text operations.
