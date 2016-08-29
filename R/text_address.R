@@ -58,19 +58,9 @@ text.address.parser <- function(
     for (i_row in 1:nrow(dict_regexp)) {
       if (nchar(dict_regexp$pattern[i_row])>0) {
         ############################## DELETE \ DEBUG
-        # address[ind1[7]]
-        # ind1[7] 68
-        # ind1[38] 446
-        # ind1[79] 971
-        # ind1[54] 28591
-        # 7             Musico Anton Roch,1-Blqu.5-6,Ptal. 2,1-A
-        # 38                                   calle paular 3.1a
-        # 79                calle de la ciudad encantada 9 a 2.2
-        # 54 c/. Urbanizacin Colonia de San Lamberto n 8 - B
         debug = FALSE
         id_debug = 68
         if (debug) {
-          id_debug = 68
           address_prev = mod_address[id_debug]
         }
 
